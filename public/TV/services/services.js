@@ -13,7 +13,7 @@ VodafoneTVApp.factory('serviceData', function($http, $q, $sce){
     //var watsonServer = hostServer + ':3000';
 
     //PROD
-    var hostServer = 'https://cognitivevodatv.mybluemix.net';
+    var hostServer = 'https://ibmcognitivetv.mybluemix.net';
     var watsonServer = hostServer;
 
     //var hostServer = '10.0.2.2';

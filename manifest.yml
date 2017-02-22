@@ -4,12 +4,12 @@ declared-services:
     plan: standard
 applications:
 - path: .
-  memory: 256M
+  memory: 128M
   instances: 1
   domain: mybluemix.net
-  name: CognitiveVodaTV
-  host: CognitiveVodaTV
-  disk_quota: 1024M
+  name: IBMCognitiveTV
+  host: ibmcognitivetv
+  disk_quota: 512M
   services:
   - ConvNueva
   env:
