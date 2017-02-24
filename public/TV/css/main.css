@@ -1,6 +1,6 @@
 body {
-	background: url('../img/bgSofa2.jpg') no-repeat center center ;
-    background-size:auto 100%;
+	/*background: url('../img/cognitive-bg.jpg') no-repeat center center ;*/
+    background-size:100% auto;
    	top:0;
     position: fixed;
     height: 100%;
@@ -10,9 +10,13 @@ body {
 
 .header {
     /*background: linear-gradient(to right, #73197b 0%, #5d037f 100%) repeat scroll 0 0 rgba(0, 0, 0, 0.5);*/
-    background-color: rgba(115,25,123,0.7) ; 
+    background: url('../img/leadspace_image_2.jpg') no-repeat center center ;
+    background-size:100% auto;
+    background-color: white;
     color: white;
-    font-size: 14px;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: "HelvRegularIBM","Helvetica Neue",Arial,sans-serif;
     height: 10%;   
 }
 @media (max-width: 768px), (orientation : portrait){
@@ -22,10 +26,17 @@ body {
 }
 
 .title-header {
-    left: 200px;
     position: absolute;
-    font-weight: bold;
-    font-size: 30em;
+    display: inline-block;
+    width: 40%;
+    margin-left: 2%;
+}
+
+.title-header > h2 {
+    /*left: 13%;*/
+    position: absolute;
+    /* font-weight: bold; */
+    font-size: 38px;
 }
 
 @media (max-width: 768px) and (orientation: portrait) {
@@ -41,10 +52,21 @@ body {
 }
 
 .footer {
-    background: #a9a9a9;
-    color: white;
+    /*background:#152935;
+    color: black;*/
+
+    width: 102%;	
+	background-color: #595C64;
+	/* overflow: hidden; */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#595C64', endColorstr='#1B1B1C'));
+	background: -webkit-gradient(linear, left top, left bottom, from(#595C64), to(#1B1B1C));
+	background: -moz-linear-gradient(top,  #595C64,  #1B1B1C);
+	background: -o-linear-gradient(top, #595C64, #1B1B1C) transparent;
+	
+
     font-size: 14px;
-    height: 7%;   
+    height: 7%;
+    
 }
 
 /* MAIN CONTENT */
@@ -58,7 +80,11 @@ body {
 }
 
 .visualizer {
-   background-color: rgba(0,176,218,0.3) ;   
+   /*background-color: rgba(0,176,218,0.3) ;   */
+    background-color: rgba(90,170,250,0.1);
+    color: #3d70b2;
+    border: 1px solid transparent;
+    border-color: #3d70b2;
     margin-top: 10px;
     margin-bottom: 10px;
     height: 97%;
@@ -77,6 +103,8 @@ body {
     margin: 1%;*/
     height: 100%;
     width: 100%;
+    margin-left: 1px;
+    margin-right: 1px;
 }
 
 .secciones {
@@ -87,8 +115,8 @@ body {
 .secciones > div {
     display: inline-block;
     width: 13%;
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-left: 6px;
+    margin-right: 6px;
 }
 
 @media (max-width: 768px), (orientation : portrait){
@@ -132,7 +160,7 @@ body {
 
 .item-leyend {
     /*background-color: rgba(210,210,210,0.7) ;*/
-    background-color: rgba(0,0,0,0.4) ;
+    background-color: #212c36;
     color: white;
     height: 40%;
     bottom: 0;
@@ -165,6 +193,14 @@ body {
     }
 }
 
+.banner-leyend {
+    background-color: 
+}
+
+.banner-leyend > img {
+    width: 62%;
+}
+
 
 
 .list-parent {
@@ -191,10 +227,11 @@ body {
 
 .list-parent-carousel .row {    
     margin-bottom: 4%;
-    background-color: rgba(0,0,0,0.4) ;
+    background-color: #212c36;
     padding-top:2%;
     padding-bottom:2%;
     margin: 1%;
+    width: 100%;
 }
 
 .list-parent-carousel  img {
@@ -222,7 +259,7 @@ body {
 .title-season {
     text-align: center;
     height: 8%;
-    color:white;
+    color:#4178be;
 }
 
 @media (max-width: 1000px) and (orientation : portrait){
@@ -236,7 +273,8 @@ body {
 
 
 .list-item-content {
-    background-color: rgba(210,210,210,0.7);
+    /*background-color: rgba(210,210,210,0.7);*/
+    background-color: #212c36;
     height: 61%;
     text-align: center;  
     margin-top: 5%;
@@ -270,7 +308,7 @@ body {
 
 .list-item-leyend {
     /*background-color: rgba(210,210,210,0.7) ;*/
-    background-color: rgba(0,0,0,0.6) ;
+    background-color: rgba(0, 174, 209, 0.55);
     color: white;
     height: 27%;
     bottom: 32%;
@@ -293,13 +331,17 @@ body {
 .secciones > div > a {
     height: 55%;    
     font-size: 1em;
-    color: white;
+    color:#4178be;
 }
 
 
 /*CHAT*/
 .watsonchat {            
-    background-color: rgba(0,176,218,0.3) ;   
+    /*background-color: rgba(0,176,218,0.3) ;   */
+    background-color: rgba(90,170,250,0.1);
+    color: #3d70b2;
+    border: 1px solid transparent;
+    border-color: #3d70b2;
     margin-top: 10px;
     margin-bottom: 10px;
     height: 97%;
@@ -309,11 +351,15 @@ body {
 
 .watsonchat > .panel {
     height: 100%;
+    /*color: #152935;
+    background-color: rgba(61,112,178,0.1);*/
 }
 
 .head-chat.panel-heading {
-    background-color: #00b1cb!important;
-    border-color: #00b1cb!important;    
+    background-color: #7cc7ff!important;
+    border-color: #7cc7ff!important;    
+    border: 1px solid #7cc7ff;
+    border-left: 6px solid #7cc7ff;
     /*height: 10%;*/
     width: 100%;    
 }
@@ -353,6 +399,7 @@ body {
     color: grey!important;
     margin-left: 5%;
     margin-right: 15%;
+    border-color: #2098d1!important;
 }
 @media (max-width: 768px), (orientation : portrait){
     .chat-bubble-watson  {
@@ -367,6 +414,7 @@ body {
     color: grey!important;
     margin-left: 15%;
     margin-right: 5%;
+    border-color: #2098d1!important;
 }
 
 
@@ -378,15 +426,23 @@ body {
 
 /* Logo VF */
 .ibm-logo {
-    
-    top: 0px;
-    left: -230px;
+    /*background: url('../img/IBM_logo.svg.png') no-repeat center center ;*/
+    /*top: 0px;
+    height: 10%;
     z-index: 999;
-    position: absolute;
+    position: absolute;*/
+    display: inline-block;
+    margin: 0.5%;
+    width: 10%;
+}
+
+.ibm-logo > img {
+    vertical-align: middle;
+    height: 85%;
 }
 
 @media (max-width: 768px) and (orientation: portrait) {
-    .vf-logo {    
+    .ibm-logo {    
         top: -20px;
         left: -320px;
         z-index: 999;
@@ -395,7 +451,7 @@ body {
 }
 
 #inputMessage {
-    width:auto !important;
+    width: 70%;
 }
 
 
@@ -403,11 +459,26 @@ body {
 
 .button-sprite {
     /*background-color: rgba(210,210,210,0.7) ;*/
-    background-color: rgba(0,0,0,0.5) ;
+    /*background-color: rgba(0,0,0,0.5) ;*/
+    background: #4178be;
+    border: 1px solid transparent;
+    border-color: #4178be;
+}
+
+.button-sprite > a {
+    color: white!important;
 }
 
 .button-sprite-disable {
     background-color: transparent;
+    color: #4178be;
+    font-size: 1em;
+    border: 1px solid transparent;
+    border-color: #3d70b2;
+}
+
+.button-sprite-disable {
+    color: #4178be;
 }
 
 .cine-sprite {
@@ -463,7 +534,7 @@ body {
     text-align: center;
     left: 47%;
     top: 45%;
-    color: red;
+    color: #7cc7ff;
 }
 @media (max-width: 768px) and (orientation: portrait) {
     .play-btn {
@@ -513,3 +584,33 @@ height: 100%;
 		height: 409.5px;
 	}
 }*/
+
+
+.carousel-control.left {
+    background-image: -webkit-linear-gradient(left,#2098d1 0,rgba(0,0,0,.0001) 100%)!important;
+    background-image: -o-linear-gradient(left,#2098d1 0,rgba(0,0,0,.0001) 100%)!important;
+    background-image: -webkit-gradient(linear,left top,right top,from(#2098d1),to(rgba(0,0,0,.0001)))!important;
+    background-image: linear-gradient(to right,#2098d1 0,rgba(0,0,0,.0001) 100%)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+    background-repeat: repeat-x;
+}
+
+.carousel-control.right {
+    right: 0;
+    left: auto;
+    background-image: -webkit-linear-gradient(left,rgba(0,0,0,.0001) 0,#2098d1 100%)!important;
+    background-image: -o-linear-gradient(left,rgba(0,0,0,.0001) 0,#2098d1 100%)!important;
+    background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.0001)),#2098d1 100%)!important;
+    background-image: linear-gradient(to right,rgba(0,0,0,.0001) 0,#2098d1 100%)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+    background-repeat: repeat-x;
+}
+
+.carousel-indicators {    
+    bottom: 1%!important;
+}
+
+.carousel-indicators li{
+    border: 2px solid #2098d1!important;
+    background-color: rgba(0,0,0,0);
+}

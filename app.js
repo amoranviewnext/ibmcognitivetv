@@ -39,12 +39,12 @@ if ( cloudantCredentials ) {
 }
 cloudantUrl = cloudantUrl || process.env.CLOUDANT_URL; // || '<cloudant_url>';
 var logs = null;
-var app = express();
+var watsonapp = express();
 
 // Bootstrap application settings
-app.use( express.static( './public' ) ); // load UI from public folder
-app.use( bodyParser.json() );
-//app.use(cors());
+watsonapp.use( express.static( './public' ) ); // load UI from public folder
+watsonapp.use( bodyParser.json() );
+//watsonapp.use(cors());
 
 
 // Create the service wrapper
@@ -78,7 +78,7 @@ var alchemy_language = watsonAPI.alchemy_language({
 //var parametersAPI = {  text: 'Estoy realmente contento, esto es fantastico, lo mejor. Soy Feliz.' };
 
 // Endpoint to be call from the client side
-app.post( '/api/message', function(req, res) {
+watsonapp.post( '/api/message', function(req, res) {
   //var workspace = process.env.WORKSPACE_ID || '<workspace-id>';
   var workspace = process.env.WORKSPACE_ID
   if ( !workspace || workspace === '<workspace-id>' ) {
@@ -199,7 +199,7 @@ if ( cloudantUrl ) {
   } );
 
   // Endpoint which allows deletion of db
-  app.post( '/clearDb', auth, function(req, res) {
+  watsonapp.post( '/clearDb', auth, function(req, res) {
     nano.db.destroy( 'orangelove_logs', function() {
       nano.db.create( 'orangelove_logs', function() {
         logs = nano.db.use( 'orangelove_logs' );
@@ -209,7 +209,7 @@ if ( cloudantUrl ) {
   } );
 
   // Endpoint which allows conversation logs to be fetched
-  app.get( '/chats', auth, function(req, res) {
+  watsonapp.get( '/chats', auth, function(req, res) {
     logs.list( {include_docs: true, 'descending': true}, function(err, body) {
       console.error(err);
       // download as CSV
@@ -265,4 +265,4 @@ if ( cloudantUrl ) {
   } );
 }
 
-module.exports = app;
+module.exports = watsonapp;

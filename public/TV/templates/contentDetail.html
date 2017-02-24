@@ -1,7 +1,9 @@
 <div id="itemTemplate" class='form item row'>
     <!--div class="col-md-12 item-content" ng-style ="{'background-image': 'url(' + viewitem.url + ')' }"-->
     <div class="col-md-12 item-content">
-        <img src="{{ (currentContentType==='Cine') ? itemDetail.urldetail : itemDetail.url}}" />
+        <div class="banner-leyend">
+            <img src="{{ (currentContentType==='Cine') ? itemDetail.urldetail : itemDetail.url}}" />
+        </div>        
         <div class="item-leyend">
             <h1 id="itemTitle">{{itemDetail.title}}</h1>
             <h5 id="itemDesc">{{itemDetail.description}}</h5>

@@ -1,4 +1,4 @@
-var VodafoneTVApp = angular.module('VodafoneTV', [
+var ibmTVApp = angular.module('CognitiveTV', [
     "app.directives",
     "ngSanitize",
     "com.2fdevs.videogular",

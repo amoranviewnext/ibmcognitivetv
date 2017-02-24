@@ -1,7 +1,7 @@
 <div class="list-parent">
     <div class="row">
         <div class="col-xs-6 col-md-3" ng-repeat="viewitem in listItem">
-            <div id="{{viewitem.id}}" class="list-item-content" ng-click="selectedItemClick($index)">
+            <div id="{{viewitem.id}}" class="list-item-content hvr-back-pulse" ng-click="selectedItemClick($index)">
                 <img src="{{viewitem.url}}" />
                 <div class="list-item-leyend">
                     <h4 id="itemTitle">{{viewitem.title | limitTo: 30 }}{{viewitem.title.length > 30 ? '...' : ''}}</h4>

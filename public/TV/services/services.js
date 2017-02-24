@@ -1,16 +1,16 @@
 
-VodafoneTVApp.config(['$sceDelegateProvider', function($sceDelegateProvider) {
+ibmTVApp.config(['$sceDelegateProvider', function($sceDelegateProvider) {
   // We must whitelist the JSONP endpoint that we are using to show that we trust it
   $sceDelegateProvider.resourceUrlWhitelist([
     'self',
     'http://*/**'
   ]);
 }]);
-VodafoneTVApp.factory('serviceData', function($http, $q, $sce){
+ibmTVApp.factory('serviceData', function($http, $q, $sce){
     
     //LOCAL
-    //var hostServer = 'http://localhost';
-    //var watsonServer = hostServer + ':3000';
+    //var hostServer = 'http://localhost' + ':3000';
+    //var watsonServer = hostServer;
 
     //PROD
     var hostServer = 'https://ibmcognitivetv.mybluemix.net';
@@ -65,7 +65,7 @@ VodafoneTVApp.factory('serviceData', function($http, $q, $sce){
             
             
             //$sce.trustAsResourceUrl(url);
-            $http.get(hostServer+'/MyVodafoneTV/controller/mock_servicios/'+ typeContent +'.json')
+            $http.get(hostServer+'/TV/controller/mock_servicios/'+ typeContent +'.json')
             //$http.jsonp(url, {jsonpCallbackParam: 'callback'})
             .then(
                 //function success(response) {
@@ -138,14 +138,14 @@ VodafoneTVApp.factory('serviceData', function($http, $q, $sce){
 
             //var path = typeContent + '/'+ itemId + '/'+ seasonId +'/episodes.json';
             
-            $http.get(hostServer+'/MyVodafoneTV/controller/mock_servicios/'+ typeContent + '/'+ itemId + '/'+ seasonId +'/episodes.json')
+            $http.get(hostServer+'/TV/controller/mock_servicios/'+ typeContent + '/'+ itemId + '/'+ seasonId +'/episodes.json')
             //$http.jsonp(url)
             .then(
                 function successCallback(response) {
                     //console.log(response);
                     var itemList = [];
                     angular.forEach(response.data.assets, function(episodeItem, i){
-                        $http.get(hostServer+'/MyVodafoneTV/controller/mock_servicios/'+ typeContent + '/'+ itemId + '/'+ seasonId +'/'+ episodeItem.id +'.json')
+                        $http.get(hostServer+'/TV/controller/mock_servicios/'+ typeContent + '/'+ itemId + '/'+ seasonId +'/'+ episodeItem.id +'.json')
                         .then(
                             function successCallback(response) {
                                 var elemento = response.data.medias[0];
@@ -197,7 +197,7 @@ VodafoneTVApp.factory('serviceData', function($http, $q, $sce){
             typeContent = typeContent.trim().toLowerCase();
 
             var deferred = $q.defer();
-            $http.get(hostServer+'/MyVodafoneTV/controller/mock_servicios/'+ typeContent + '/'+ itemId + '/'+ itemId +'.json')
+            $http.get(hostServer+'/TV/controller/mock_servicios/'+ typeContent + '/'+ itemId + '/'+ itemId +'.json')
             .then(
                 function successCallback(response) {
                     console.log(response);
@@ -293,7 +293,7 @@ VodafoneTVApp.factory('serviceData', function($http, $q, $sce){
         angular.forEach(listToSearch, function(item, i){
             arrayToSearch[i]=item.id;
         });
-        $http.get(hostServer + '/MyVodafoneTV/controller/mock_servicios/content.json')
+        $http.get(hostServer + '/TV/controller/mock_servicios/content.json')
         .then(
             function successCallback(response) {
                 var responseArray=[];
@@ -351,10 +351,10 @@ VodafoneTVApp.factory('serviceData', function($http, $q, $sce){
             });            
         } else {
 
-        $http.get(hostServer+'/MyVodafoneTV/controller/mock_servicios/content.json')
+        $http.get(hostServer+'/TV/controller/mock_servicios/content.json')
         .then(
             function successCallback(response) {
-                console.log("Response from http://localhost/MyVodafoneTV/controller/mock_servicios/content.json", response.data);
+                console.log("Response from http://localhost/TV/controller/mock_servicios/content.json", response.data);
                 var translatedList = [];
 
                 var firstType = (filterParams.contenido_previsualizar[0]!==undefined) ? filterParams.contenido_previsualizar[0].substring(0,3) : "";   

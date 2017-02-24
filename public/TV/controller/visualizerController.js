@@ -2,7 +2,7 @@
  * CONTROLADOR PARA LA VISTA PRINCIPAL
  */
 
-VodafoneTVApp.controller('VisualizerController', ['$scope', '$http', '$q', 'serviceData', '$sce',
+ibmTVApp.controller('VisualizerController', ['$scope', '$http', '$q', 'serviceData', '$sce',
     function VisualizerController($scope, $http, $q, serviceData, $sce) {
 
         console.log(" INICIANDO VISUALIZER CONTROLLER ");

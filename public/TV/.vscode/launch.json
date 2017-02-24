@@ -8,7 +8,7 @@
             "url": "http://localhost:80",
             "sourceMaps": true,
             //"webRoot": "${workspaceRoot}"
-            "webRoot": "MyVodafoneTV"
+            "webRoot": "TV"
         },
         {
             "name": "Attach to Chrome, with sourcemaps",

@@ -3,7 +3,7 @@
  */
 
 
-VodafoneTVApp
+ibmTVApp
 .run(['$anchorScroll', function($anchorScroll) {
     $anchorScroll.yOffset = 50;
 }])
